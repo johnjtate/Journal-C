@@ -21,7 +21,7 @@
     return shared;
 }
 
-// Source of Truth--creat empty mutable array called entries
+// Source of Truth--create empty mutable array called entries
 -(instancetype)init {
     self = [super init];
     if (self) {
@@ -37,9 +37,17 @@
 }
 
 // remove entry function
--(void)removeEntryWithEntry:(JJTEntry *)entry {
+-(void)removeEntryCalled:(JJTEntry *)entry {
     NSUInteger index = [[JJTEntryController shared].entries indexOfObject:entry];
     [[JJTEntryController shared].entries removeObjectAtIndex:index];
+}
+
+// update entry function
+-(void)updateEntryCalled:(JJTEntry *)entry withNewTitle:(NSString *)newTitle andNewBody:(NSString *)newBodyText {
+
+    entry.title = newTitle;
+    entry.timestamp = [[NSDate alloc] init];
+    entry.bodytext = newBodyText;
 }
 
 @end

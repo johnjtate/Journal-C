@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JJTEntry.h"
 
 @interface JJTEntryController : NSObject
 
 @property (nonatomic) NSMutableArray *entries;
 
--(void)addEntryWithTitle;
--(void)removeEntryWithEntry;
+-(void)addEntryWithTitle:(NSString *)title andBody:(NSString *)bodytext;
+-(void)removeEntryCalled:(JJTEntry *)entry;
+-(void)updateEntryCalled:(JJTEntry *)entry withNewTitle:(NSString *)newTitle andNewBody:(NSString *)newBodyText;
 
 // shared instance
 +(JJTEntryController *)shared;
