@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+//    [[JJTEntryController shared] loadFromPersistentStore];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
